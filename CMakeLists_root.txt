@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.8) #current version installed in pc 3.26.5 use ur version install but if backward compatible is fine
+set(This NAME_FOR_PROJECT) #set a variable this that can be used in mutliple places, rename only one place affects other places it was used
+project(${This} C CXX) #establish name of project and languages used
+project(${This} VERSION 1.0.0)
+set(CMAKE_C_STANDARD 99) # Tell build system  what version of language we are using
+set(CMAKE_CXX_STANDARD 11)
+set (CMAKE_POSITION_INDEPENDENT_CODE ON) #settting for libraries that are going to mixed together and linked together
+
+# cmkae's ctest feature allow to manage tests in the project and almost automatically run all ur test
+#
+#
+#
+include(CTest)
+enable_testing() #tell cmake you are going to do unit test
+
+add_subdirectory(googletest) # pull all dependencies within the workspaces
+
+add_subdirectory(sourcecode)
+
+add_subdirectory(testSource) #keep test separate in code in test folder whic will have ts cmakelist
+

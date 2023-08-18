@@ -1,0 +1,2 @@
+C:\msys64\mingw64\bin\ar.exe qc libSourcecodes.a CMakeFiles/Sourcecodes.dir/example.c.obj
+C:\msys64\mingw64\bin\ranlib.exe libSourcecodes.a
